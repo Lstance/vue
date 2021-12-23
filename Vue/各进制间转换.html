@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<title>进制转换</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+	
+		<table border="0" cellspacing="" cellpadding="" style="height: 20px;">
+			<tr>
+				<td style="width: 400px;text-align: center;"> 转二进制</td>
+				<td style="width: 400px;text-align: center;">转十进制</td>
+			</tr>
+			<tr>
+				<td style="text-align: right;"><table border="0" cellspacing="" cellpadding="" id="app1" >
+					<tr><td>十进制:<input type="text"  v-model="n10" name="" id="" value="" /></td><td>转二进制数：{{n_10}}</td></tr>
+					<!-- var num = 100;console.log(num.toString(2));//十转二 -->
+					<tr><td>十六进制:<input type="text"  v-model="n16" name="" id="" value="" /></td><td>转二进制数：{{n_16}}</td></tr>
+					<tr><td>八进制:<input type="text"  v-model="n8" name="" id="" value="" /></td><td>转二进制数：{{n_8}}</td></tr>
+				</table></td>
+				<td style="text-align: right;"><table border="0" cellspacing="" cellpadding="">
+					<tr><td>二进制:<input type="text"  v-model="s2" name="" id="" value="" /></td><td>转十进制：{{s_2}}</td></tr>
+					<tr><td>十六进制:<input type="text"  v-model="s16" name="" id="" value="" /></td><td>转十进制：{{s_16}}</td></tr>
+					<tr><td>八进制:<input type="text"   v-model="s8" name="" id="" value="" /></td><td>转十进制：{{s_8}}</td></tr>
+				</table></td>
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>	
+				<tr>
+					<td style="width: 400px;text-align: center;">转十六进制</td>
+					<td style="width: 400px;text-align: center;">转八进制</td>
+				</tr>
+			</tr>
+			<tr>
+				<td style="text-align: right;"><table border="0" cellspacing="" cellpadding="">
+					<tr><td>十进制:<input type="text"   v-model="l10" name="" id="" value="" /></td><td>转十六进制：{{l_10}}</td></tr>
+					<tr><td>二进制:<input type="text"   v-model="l2" name="" id="" value="" /></td><td>转十六进制：{{l_2}}</td></tr>
+					<tr><td>八进制:<input type="text"   v-model="l8" name="" id="" value="" /></td><td>转十六进制：{{l_8}}</td></tr>
+				</table></td>
+				<td style="text-align: right;"><table border="0" cellspacing="" cellpadding="">
+					<tr><td>十进制:<input type="text"   v-model="b10" name="" id="" value="" /></td><td>转八进制：{{b_10}}</td></tr>
+					<tr><td>十六进制:<input type="text"  v-model="b16" name="" id="" value="" /></td><td>转八进制：{{b_16}}</td></tr>
+					<tr><td>二进制:<input type="text"   v-model="b2" name="" id="" value="" /></td><td>转八进制：{{b_2}}</td></tr>
+				</table></td>
+			</tr>
+		</table>
+		
+		
+	</div>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#app',
+			data: {
+				n10: '0',
+				n16: '0',
+				n8: '0',
+				s2: '0',
+				s16: '0',
+				s8: '0',
+				l10: '0',l2: '0',l8: '0',
+				b10: '0',b16: '0',b2: '0',
+			},
+			computed: {
+				
+				n_10: function() {
+					return (parseInt(this.n10)).toString(2);
+				},
+				n_16: function() {
+					return (parseInt(this.n16, 16)).toString(2);
+				},
+				n_8: function() {
+					return (parseInt(this.n8, 8)).toString(2);
+				},
+				s_2: function() {
+					return parseInt(this.s2, 2);
+				},
+				s_16: function() {
+					return parseInt(this.s16, 8);
+				},
+				s_8: function() {
+					return parseInt(this.s8,8);
+				},
+				l_10: function() {
+					return (parseInt(this.l10)).toString(16);
+				},
+				l_2: function() {
+					return (parseInt(this.l2, 2)).toString(16);
+				},
+				l_8: function() {
+					return (parseInt(this.l8, 8)).toString(16);
+				},
+				b_10: function() {
+					return (parseInt(this.b10)).toString(8);
+				},
+				b_16: function() {
+					return (parseInt(this.b16, 16)).toString(8);
+				},
+				b_2: function() {
+					return (parseInt(this.b2, 2)).toString(8);
+				}
+			}
+		});
+	</script>
+</body>
+</html>
